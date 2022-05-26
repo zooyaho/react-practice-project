@@ -1,6 +1,6 @@
 /* 비용 아이템 컴포넌트 */
 import ExpenseDate from "./ExpenseDate";
-import Card from "./Card";
+import Card from "../UI/Card";
 import "./ExpenseItem.css";
 
 function ExpenseItem(props) {

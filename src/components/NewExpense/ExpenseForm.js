@@ -2,7 +2,7 @@
 import React, {useState} from 'react';
 import './ExpenseForm.css'
 
-const ExpenseForm = ()=>{
+const ExpenseForm = (props)=>{
   /* - 여러개의 useState를 만들어 사용하는 법
      - 한개의 useState로 여러개의 state를 만드는건 ExpenseFormOneStateEX.js참고 */
   const [enteredTitle, setEnteredTitle] = useState('');
@@ -31,7 +31,9 @@ const ExpenseForm = ()=>{
       amount: enteredAmount,
       date: new Date(enteredDate)
     };
-    console.log(expenseData);
+    
+    // NewExpense컴포넌트에서 가져온 함수를 실행함!
+    props.onSaveExpenseData(expenseData);
 
     // 폼요소 초기화
     setEnteredTitle('');

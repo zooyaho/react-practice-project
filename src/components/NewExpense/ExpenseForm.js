@@ -19,8 +19,24 @@ const ExpenseForm = ()=>{
     setEnteredAmount(event.target.value);
   };
 
+  const submitHandler = (event)=>{
+    // <form onSubmit={submitHandler}>에서 버튼으로 submit할 경우, 폼 데이터가 서버로 전달되면서 페이지가 다시 로드됨.
+    // 여기서 우리는 서버로 보낼것이 아니기 때문에 이 현상을 방지하기 위해 preventDefault()를 사용하는 것.
+    // 서버로 요청이 보내지지 않아 페이지가 로드되지 않음~!
+    event.preventDefault();
+
+    // 세개의 state값을 객체로 합침.
+    const expenseData = {
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: new Date(enteredDate)
+    };
+
+    console.log(expenseData);
+  };
+
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className='new-expense__controls'>
         <div className='new-expense__control'>
           <label>Title</label>

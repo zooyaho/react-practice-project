@@ -15,7 +15,7 @@ const Chart = (props) => {
   return (
     <div className="chart">
       {props.dataPoints.map((datapoint) => {
-        <ChartBar
+        return <ChartBar
           key={datapoint.id}
           value={datapoint.value}
           maxValue={totalMaximum} // 전체 최대값: 달 중 제일 큰 값을 가진 달의 value에 해당

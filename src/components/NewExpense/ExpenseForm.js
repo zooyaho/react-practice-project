@@ -28,7 +28,7 @@ const ExpenseForm = (props)=>{
     // 세개의 state값을 객체로 합침.
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate)
     };
     
